@@ -60,6 +60,13 @@ public class ChessPiece {
         if(type == PieceType.ROOK) {
             return new RookMovesCalc().calcMoves(board, myPosition);
         }
+        if(type == PieceType.QUEEN) {
+            Collection<ChessMove> queenMoves = new ArrayList<>();
+            queenMoves.addAll(new RookMovesCalc().calcMoves(board,myPosition));
+            queenMoves.addAll(new BishopMovesCalc().calcMoves(board,myPosition));
+            return queenMoves;
+
+        }
         else {
             return null;
         }
