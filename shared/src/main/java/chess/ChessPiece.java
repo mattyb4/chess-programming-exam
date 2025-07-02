@@ -67,6 +67,9 @@ public class ChessPiece {
             return queenMoves;
 
         }
+        if(type == PieceType.KNIGHT) {
+            return new KnightMovesCalc().calcMoves(board, myPosition);
+        }
         else {
             return null;
         }
