@@ -73,6 +73,9 @@ public class ChessPiece {
         if(type == PieceType.KING) {
             return new KingMovesCalc().calcMoves(board, myPosition);
         }
+        if(type == PieceType.PAWN) {
+            return new PawnMovesCalc().calcMoves(board, myPosition);
+        }
         else {
             return null;
         }
